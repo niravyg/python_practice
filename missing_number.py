@@ -1,8 +1,21 @@
-# find missing number from the list of numbers
-list1 = list(input("Enter the list of numbers separated by space: ").split())
-list1 = [int(i) for i in list1]
+# Find missing number from an ascending list
 
-def find_missing_value(list1):
-    # for loop for accesing the each element of the list
-    for i in range(len(list1)):
-        # 
+list1 = list(map(int, input("Enter numbers separated by spaces: ").split()))
+
+def missing_number(list1):
+
+    missing_value_list = []
+
+    for i in range(len(list1)-1):
+
+        if list1[i+1] != list1[i]+1:
+
+            missing_value = list1[i]+1
+
+            missing_value_list.append(missing_value)
+
+    return missing_value_list
+
+
+var1 = missing_number(list1)
+print(var1)
